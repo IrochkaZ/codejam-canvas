@@ -85,6 +85,7 @@ ul>li>div {
     border: 1px solid black;
     border-radius: 50%;
     width: 20px;
+    height: 20px;
 }
 
 .main {
@@ -124,4 +125,20 @@ ul>li>div {
 
 #canvas {
     background-color: #8f8b8b;
+}
+
+.current-circle {
+    background-color: #c4c4c4;
+}
+
+.prev-circle {
+    background-color: #41F795;
+}
+
+.show-circle {
+    background-color: #F74141;
+}
+
+.show__prev-circle {
+    background-color: #41B6F7;
 }
