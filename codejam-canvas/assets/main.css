@@ -69,7 +69,16 @@ i.fas.fa-bars {
 li {
     display: flex;
     padding: 12px 30px;
-    justify-content: space-between;
+    justify-content: flex-start;
+}
+
+ul>li>img,
+ul>li>div {
+    margin-right: 35px;
+}
+
+.shape {
+    margin-left: 1075px;
 }
 
 .color__circle {

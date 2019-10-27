@@ -6217,3 +6217,49 @@ const size32x32 = [
         ]
     ]
 ]
+
+let canvas = document.getElementById("canvas");
+let ctx = canvas.getContext("2d");
+
+function draw4x4(arr) {
+    ctx.clearRect = (0, 0, ctx.width, ctx.height);
+    let width = size4x4[0].length;
+    let height = size4x4.length;
+    let scale = 130;
+
+    canvas.width = width * scale;
+    canvas.height = height * scale;
+
+    for (let row = 0; row < height; row++) {
+        for (let col = 0; col < width; col++) {
+            ctx.fillStyle = `#${size4x4[row][col]}`;
+            ctx.fillRect(col * scale, row * scale, scale, scale);
+        }
+    }
+}
+
+function draw32x32(arr) {
+    ctx.clearRect = (0, 0, ctx.width, ctx.height);
+    let scale = 17;
+    for (let row = 0; row < size32x32.length; row++) {
+        for (let col = 0; col < size32x32[row].length; col++) {
+            let boxColor = `rgba(${size32x32[row][col][0]},${size32x32[row][col][1]},${size32x32[row][col][2]},${size32x32[row][col][3]}`;
+            ctx.fillStyle = boxColor;
+            ctx.fillRect(col * scale, row * scale, scale, scale);
+        }
+    }
+}
+
+function drawImg() {
+    ctx.clearRect = (0, 0, ctx.width, ctx.height);
+    let imgRs = new Image();
+    imgRs.id = "imgRs";
+    imgRs.onload = () => {
+        ctx.drawImage(imgRs, 0, 0, canvas.width, canvas.height);
+    }
+    imgRs.src = "./assets/img/rs.png";
+}
+
+document.querySelector('.draw4x4').addEventListener('click', draw4x4);
+document.querySelector('.draw32x32').addEventListener('click', draw32x32);
+document.querySelector('.drawRschool').addEventListener('click', drawImg);
